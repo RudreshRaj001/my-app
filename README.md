@@ -1,5 +1,7 @@
 # Getting Started with Create React App
 
+Json: "homepage": "<https://RudreshRaj001.github.io/my-app>",
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

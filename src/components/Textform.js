@@ -97,19 +97,19 @@ export default function Textform(props) {
         need a onChange event to make the changes in the states
         by listning to the various events on like keyboard in the function */}
       </div>
-      <button className="btn btn-primary mx-2" onClick={handleUpClick}>Convert To UpperCase</button>
-      <button className="btn btn-primary mx-2" onClick={handleLoClick}>Convert To LowerCase</button>
-      <button className="btn btn-primary mx-2" onClick={handleClearClick}>Clear Text</button>
-      <button className="btn btn-primary mx-2" onClick={handleReverseClick}>Reverse Text</button>
-      <button className="btn btn-primary mx-2" onClick={handleCopy}>Copy Text</button>
-      <button className="btn btn-primary mx-2" onClick={handleExtraSpaces}>Remove Extra Spaces</button>
-      <button className="btn btn-primary mx-2" onClick={cypherClick}>Cypher Text + 1</button>
-      <button className="btn btn-primary mx-2" onClick={decypherClick}>Decypher Text - 1</button>
+      <button className="btn btn-primary mx-2 my-2" onClick={handleUpClick}>Convert To UpperCase</button>
+      <button className="btn btn-primary mx-2 my-2" onClick={handleLoClick}>Convert To LowerCase</button>
+      <button className="btn btn-primary mx-2 my-2" onClick={handleClearClick}>Clear Text</button>
+      <button className="btn btn-primary mx-2 my-2" onClick={handleReverseClick}>Reverse Text</button>
+      <button className="btn btn-primary mx-2 my-2" onClick={handleCopy}>Copy Text</button>
+      <button className="btn btn-primary mx-2 my-2" onClick={handleExtraSpaces}>Remove Extra Spaces</button>
+      <button className="btn btn-primary mx-2 my-2" onClick={cypherClick}>Cypher Text + 1</button>
+      <button className="btn btn-primary mx-2 my-2" onClick={decypherClick}>Decypher Text - 1</button>
     </div>
     <div className="container my-3" style = {{color: props.mode === "dark" ? "white" : "black"}}>
       <h2>Your text Summary</h2>
-      <p>{text.split(" ").length - 1} Words and {text.length} characters</p>
-      <p>{0.008 * (text.split(" ").length - 1)} Minutes Read</p>
+      <p>{text.split(" ").filter((element)=>{return element.length!==0}).length} Words and {text.length} characters</p>
+      <p>{0.008 * (text.split(" ").filter((element)=>{return element.length!==0}).length)} Minutes Read</p>
       <h2>Preview</h2>
       <p>{text.length > 0 ? text : "Enter Something above to preview it here"}</p>
     </div>

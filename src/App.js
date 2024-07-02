@@ -5,7 +5,7 @@ import About from "./components/About";
 import Navbar from "./components/Navbar";
 import Textform from "./components/Textform";
 import Alert from "./components/Alert";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
   const [mode, setMode] = useState("light"); // weather dark mode is enabled or not
@@ -101,8 +101,10 @@ function App() {
           toggleMode={toggleMode}
         />
         <Alert alert={alert} />
+
         <div className="container my-3">
 
+          
           <Routes>
             <Route
               exact path="/"
@@ -116,6 +118,13 @@ function App() {
             />
             <Route exact path="/about" element={<About />} />
           </Routes>
+{/* 
+          <Textform
+            heading="Enter the text to Analyse Below"
+            mode={mode}
+            showAlert={showAlert}
+          /> */}
+
         </div>
       </Router>
     </>
