@@ -93,6 +93,7 @@ export default function Textform(props) {
           }}
           id="myBox"
           rows="8"
+          placeholder="Enter Text Here to enable the buttons"
           ></textarea>
         {/* We used a Hook State variable "text" in the value and we 
         need a onChange event to make the changes in the states
