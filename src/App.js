@@ -19,7 +19,51 @@ function App() {
       setAlert(null);
     }, 1500);
   };
+
+  const removeBodyClasses = () => {
+    const classes = [
+      'bg-primary',
+      'bg-primary-emphasis',
+      'bg-secondary',
+      'bg-secondary-emphasis',
+      'bg-success',
+      'bg-success-emphasis',
+      'bg-danger',
+      'bg-danger-emphasis',
+      'bg-warning',
+      'bg-warning-emphasis',
+      'bg-info',
+      'bg-info-emphasis',
+      'bg-light',
+      'bg-light-emphasis',
+      'bg-dark',
+      'bg-dark-emphasis',
+      'bg-body',
+      'bg-body-emphasis',
+      'bg-body-secondary',
+      'bg-body-tertiary',
+      'bg-black',
+      'bg-white',
+      'bg-black-50',
+      'bg-white-50'
+    ];
+  
+    classes.forEach((cls) => {
+      document.body.classList.remove(cls);
+    });
+  };
+  
+
   const toggleMode = (button) => {
+    removeBodyClasses();
+    document.body.classList.add('bg-'+button);
+
+    if(button === "dark"){
+      setMode("dark");
+    }else{
+      setMode("light");
+    }
+    
     if (button === "Dark-Mode-Button") {
       if (mode === "light") {
         setMode("dark");
@@ -110,7 +154,7 @@ function App() {
               exact path="/"
               element={
                 <Textform
-                  heading="Enter the text to Analyse Below"
+                  heading="TextUtils - Cypher | Decypher"
                   mode={mode}
                   showAlert={showAlert}
                 />

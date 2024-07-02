@@ -33,6 +33,7 @@ export default function Textform(props) {
     let myText = document.getElementById('myBox')
     myText.select();
     navigator.clipboard.writeText(myText.value);
+    document.getSelection().removeAllRanges();
     props.showAlert("Text Copied", "success");
   }
 
@@ -79,7 +80,7 @@ export default function Textform(props) {
   return (
     <>
     <div className="container" style = {{color: props.mode === "dark" ? "white" : "black"}}>
-      <h1>{props.heading}</h1>
+      <h1 className="mb-4">{props.heading}</h1>
       <div className="mb-3">
         
         <textarea
@@ -97,21 +98,21 @@ export default function Textform(props) {
         need a onChange event to make the changes in the states
         by listning to the various events on like keyboard in the function */}
       </div>
-      <button className="btn btn-primary mx-2 my-2" onClick={handleUpClick}>Convert To UpperCase</button>
-      <button className="btn btn-primary mx-2 my-2" onClick={handleLoClick}>Convert To LowerCase</button>
-      <button className="btn btn-primary mx-2 my-2" onClick={handleClearClick}>Clear Text</button>
-      <button className="btn btn-primary mx-2 my-2" onClick={handleReverseClick}>Reverse Text</button>
-      <button className="btn btn-primary mx-2 my-2" onClick={handleCopy}>Copy Text</button>
-      <button className="btn btn-primary mx-2 my-2" onClick={handleExtraSpaces}>Remove Extra Spaces</button>
-      <button className="btn btn-primary mx-2 my-2" onClick={cypherClick}>Cypher Text + 1</button>
-      <button className="btn btn-primary mx-2 my-2" onClick={decypherClick}>Decypher Text - 1</button>
+      <button disabled={text.length === 0} className="btn btn-primary mx-2 my-2" onClick={handleUpClick}>Convert To UpperCase</button>
+      <button disabled={text.length === 0} className="btn btn-primary mx-2 my-2" onClick={handleLoClick}>Convert To LowerCase</button>
+      <button disabled={text.length === 0} className="btn btn-primary mx-2 my-2" onClick={handleClearClick}>Clear Text</button>
+      <button disabled={text.length === 0} className="btn btn-primary mx-2 my-2" onClick={handleReverseClick}>Reverse Text</button>
+      <button disabled={text.length === 0} className="btn btn-primary mx-2 my-2" onClick={handleCopy}>Copy Text</button>
+      <button disabled={text.length === 0} className="btn btn-primary mx-2 my-2" onClick={handleExtraSpaces}>Remove Extra Spaces</button>
+      <button disabled={text.length === 0} className="btn btn-primary mx-2 my-2" onClick={cypherClick}>Cypher Text + 1</button>
+      <button disabled={text.length === 0} className="btn btn-primary mx-2 my-2" onClick={decypherClick}>Decypher Text - 1</button>
     </div>
     <div className="container my-3" style = {{color: props.mode === "dark" ? "white" : "black"}}>
       <h2>Your text Summary</h2>
-      <p>{text.split(" ").filter((element)=>{return element.length!==0}).length} Words and {text.length} characters</p>
+      <p>{text.split(/\s+/).filter((element)=>{return element.length!==0}).length} Words and {text.length} characters</p>
       <p>{0.008 * (text.split(" ").filter((element)=>{return element.length!==0}).length)} Minutes Read</p>
       <h2>Preview</h2>
-      <p>{text.length > 0 ? text : "Enter Something above to preview it here"}</p>
+      <p>{text.length > 0 ? text : "Enter Something above to preview it here!"}</p>
     </div>
   </>
   );

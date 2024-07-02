@@ -30,7 +30,7 @@ export default function Navbar(props) {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <Link className="nav-link active" aria-current="page" to="/">
+                <Link className="nav-link" aria-current="page" to="/">
                   Home
                 </Link>
                 {/* <a className="nav-link active" aria-current="page" href="/">
@@ -58,7 +58,83 @@ export default function Navbar(props) {
               </button>
             </form> */}
 
-            <div className="form-check form-switch" style={{marginRight: "20px"}} >
+            <div className="dropdown mx-4 justify-content-center">
+              <button
+                className="btn btn-secondary dropdown-toggle"
+                type="button"
+                id="dropdownMenuButton"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Color Palette
+              </button>
+              <ul
+                className="dropdown-menu"
+                aria-labelledby="dropdownMenuButton"
+              >
+                <li>
+                  <div
+                    className="bg-primary rounded my-2 mx-3"
+                    style={{ height: "30px", width: "30px", cursor: "pointer" }}
+                    onClick={() => props.toggleMode("primary")}
+                  ></div>
+                </li>
+                <li>
+                  <div
+                    className="bg-secondary rounded my-2 mx-3"
+                    style={{ height: "30px", width: "30px", cursor: "pointer" }}
+                    onClick={() => props.toggleMode("secondary")}
+                  ></div>
+                </li>
+                <li>
+                  <div
+                    className="bg-success rounded my-2 mx-3"
+                    style={{ height: "30px", width: "30px", cursor: "pointer" }}
+                    onClick={() => props.toggleMode("success")}
+                  ></div>
+                </li>
+                <li>
+                  <div
+                    className="bg-danger rounded my-2 mx-3"
+                    style={{ height: "30px", width: "30px", cursor: "pointer" }}
+                    onClick={() => props.toggleMode("danger")}
+                  ></div>
+                </li>
+                <li>
+                  <div
+                    className="bg-warning rounded my-2 mx-3"
+                    style={{ height: "30px", width: "30px", cursor: "pointer" }}
+                    onClick={() => props.toggleMode("warning")}
+                  ></div>
+                </li>
+                <li>
+                  <div
+                    className="bg-info rounded my-2 mx-3"
+                    style={{ height: "30px", width: "30px", cursor: "pointer" }}
+                    onClick={() => props.toggleMode("info")}
+                  ></div>
+                </li>
+                <li>
+                  <div
+                    className="bg-light rounded my-2 mx-3"
+                    style={{ height: "30px", width: "30px", cursor: "pointer" }}
+                    onClick={() => props.toggleMode("light")}
+                  ></div>
+                </li>
+                <li>
+                  <div
+                    className="bg-dark rounded my-2 mx-3"
+                    style={{ height: "30px", width: "30px", cursor: "pointer" }}
+                    onClick={() => props.toggleMode("dark")}
+                  ></div>
+                </li>
+              </ul>
+            </div>
+
+            <div
+              className="form-check form-switch"
+              style={{ marginRight: "20px" }}
+            >
               <input
                 className="form-check-input"
                 type="checkbox"
@@ -66,12 +142,20 @@ export default function Navbar(props) {
                 id="flexSwitchCheckDefault"
                 onClick={() => props.toggleMode("Pink-Mode-Button")}
               />
-              <label className={`form-check-label text-${props.mode === 'dark'?'light':'dark'}`} htmlFor="flexSwitchCheckDefault">
+              <label
+                className={`form-check-label text-${
+                  props.mode === "dark" ? "light" : "dark"
+                }`}
+                htmlFor="flexSwitchCheckDefault"
+              >
                 Pink Mode
               </label>
             </div>
 
-            <div className="form-check form-switch" style={{marginRight: "20px"}} >
+            <div
+              className="form-check form-switch"
+              style={{ marginRight: "20px" }}
+            >
               <input
                 className="form-check-input"
                 type="checkbox"
@@ -79,12 +163,20 @@ export default function Navbar(props) {
                 id="flexSwitchCheckDefault"
                 onClick={() => props.toggleMode("Blue-Mode-Button")}
               />
-              <label className={`form-check-label text-${props.mode === 'dark'?'light':'dark'}`} htmlFor="flexSwitchCheckDefault">
+              <label
+                className={`form-check-label text-${
+                  props.mode === "dark" ? "light" : "dark"
+                }`}
+                htmlFor="flexSwitchCheckDefault"
+              >
                 Blue Mode
               </label>
             </div>
 
-            <div className="form-check form-switch" style={{marginRight: "20px"}} >
+            <div
+              className="form-check form-switch"
+              style={{ marginRight: "20px" }}
+            >
               <input
                 className="form-check-input"
                 type="checkbox"
@@ -92,12 +184,20 @@ export default function Navbar(props) {
                 id="flexSwitchCheckDefault"
                 onClick={() => props.toggleMode("Green-Mode-Button")}
               />
-              <label className={`form-check-label text-${props.mode === 'dark'?'light':'dark'}`} htmlFor="flexSwitchCheckDefault">
+              <label
+                className={`form-check-label text-${
+                  props.mode === "dark" ? "light" : "dark"
+                }`}
+                htmlFor="flexSwitchCheckDefault"
+              >
                 Green Mode
               </label>
             </div>
 
-            <div className="form-check form-switch" style={{marginRight: "20px"}} >
+            <div
+              className="form-check form-switch"
+              style={{ marginRight: "20px" }}
+            >
               <input
                 className="form-check-input"
                 type="checkbox"
@@ -105,7 +205,12 @@ export default function Navbar(props) {
                 id="flexSwitchCheckDefault"
                 onClick={() => props.toggleMode("Orange-Mode-Button")}
               />
-              <label className={`form-check-label text-${props.mode === 'dark'?'light':'dark'}`} htmlFor="flexSwitchCheckDefault">
+              <label
+                className={`form-check-label text-${
+                  props.mode === "dark" ? "light" : "dark"
+                }`}
+                htmlFor="flexSwitchCheckDefault"
+              >
                 Orange Mode
               </label>
             </div>
@@ -118,11 +223,15 @@ export default function Navbar(props) {
                 id="flexSwitchCheckDefault"
                 onClick={() => props.toggleMode("Dark-Mode-Button")}
               />
-              <label className={`form-check-label text-${props.mode === 'dark'?'light':'dark'}`} htmlFor="flexSwitchCheckDefault">
+              <label
+                className={`form-check-label text-${
+                  props.mode === "dark" ? "light" : "dark"
+                }`}
+                htmlFor="flexSwitchCheckDefault"
+              >
                 Dark Mode
               </label>
             </div>
-
           </div>
         </div>
       </nav>
