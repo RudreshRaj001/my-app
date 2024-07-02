@@ -1,32 +1,37 @@
 import React, { useState } from "react";
 
-export default function About() {
-  const [myStyle, setmyStyle] = useState({
-    color: "#000000",
-    backgroundColor: "#FFFFFF",
-  });
+export default function About(props) {
+  // const [myStyle, setmyStyle] = useState({
+  //   color: "#000000",
+  //   backgroundColor: "#FFFFFF",
+  // });
 
-  const [btnText, setBtnText] = useState('Enable Dark Mode');
+  // const [btnText, setBtnText] = useState('Enable Dark Mode');
 
-  const toggleStyle = () => {
-    if (myStyle.color === "#FFFFFF") {
-      setmyStyle({
-        color: "#000000",
-        backgroundColor: "#FFFFFF",
-      });
-      setBtnText('Enable Dark Mode');
-    } else {
-      setmyStyle({
-        color: "#FFFFFF",
-        backgroundColor: "#000000",
-        border: "1px solid #FFFFFF",
-      });
-      setBtnText('Enable Light Mode');
-    }
-  };
+  // const toggleStyle = () => {
+  //   if (myStyle.color === "#FFFFFF") {
+  //     setmyStyle({
+  //       color: "#000000",
+  //       backgroundColor: "#FFFFFF",
+  //     });
+  //     setBtnText('Enable Dark Mode');
+  //   } else {
+  //     setmyStyle({
+  //       color: "#FFFFFF",
+  //       backgroundColor: "#000000",
+  //       border: "1px solid #FFFFFF",
+  //     });
+  //     setBtnText('Enable Light Mode');
+  //   }
+  // };
+
+  let myStyle = {
+    color: props.mode === 'dark' ? '#FFFFFF' : 'black',
+    backgroundColor: props.mode === 'dark' ? 'rgb(128 128 128)' : '#FFFFFF',
+  }
 
   return (
-    <div className="container px-4 py-3" style={myStyle}>
+    <div className="container px-4 py-3" style={{color: props.mode === 'dark' ? '#FFFFFF' : 'black'}}>
       <h1 className="my-3">About Us</h1>
       <div className="accordion" id="accordionExample">
         <div className="accordion-item" style={myStyle}>
@@ -124,11 +129,11 @@ export default function About() {
         </div>
       </div>
 
-      <div className="container my-3">
+      {/* <div className="container my-3">
         <button onClick={toggleStyle} type="button" className="btn btn-primary">
           {btnText}
         </button>
-      </div>
+      </div> */}
     </div>
   );
 }
