@@ -154,7 +154,7 @@ function App() {
               exact path="/"
               element={
                 <Textform
-                  heading="TextUtils - Cypher | Decypher"
+                  heading="TextUtils - Cipher | Decipher"
                   mode={mode}
                   showAlert={showAlert}
                 />

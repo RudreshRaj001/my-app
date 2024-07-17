@@ -105,8 +105,8 @@ export default function Textform(props) {
       <button disabled={text.length === 0} className="btn btn-primary mx-2 my-2" onClick={handleReverseClick}>Reverse Text</button>
       <button disabled={text.length === 0} className="btn btn-primary mx-2 my-2" onClick={handleCopy}>Copy Text</button>
       <button disabled={text.length === 0} className="btn btn-primary mx-2 my-2" onClick={handleExtraSpaces}>Remove Extra Spaces</button>
-      <button disabled={text.length === 0} className="btn btn-primary mx-2 my-2" onClick={cypherClick}>Cypher Text + 1</button>
-      <button disabled={text.length === 0} className="btn btn-primary mx-2 my-2" onClick={decypherClick}>Decypher Text - 1</button>
+      <button disabled={text.length === 0} className="btn btn-primary mx-2 my-2" onClick={cypherClick}>Cipher Text + 1</button>
+      <button disabled={text.length === 0} className="btn btn-primary mx-2 my-2" onClick={decypherClick}>Decipher Text - 1</button>
     </div>
     <div className="container my-3" style = {{color: props.mode === "dark" ? "white" : "black"}}>
       <h2>Your text Summary</h2>
